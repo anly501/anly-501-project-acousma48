@@ -11,7 +11,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #004d99;
+    background-color: red;
     max-width:1357px;
 }
 
@@ -21,7 +21,7 @@ li {
 
 li a, .dropbtn {
     display: inline-block;
-    color: white;
+    color: yellow;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
