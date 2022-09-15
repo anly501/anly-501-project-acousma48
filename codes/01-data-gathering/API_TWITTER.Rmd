@@ -1,0 +1,61 @@
+```{R}
+library("openssl")
+library("httpuv")
+library("twitteR")
+library("tm")
+library("stringr")
+library("dplyr")
+library("base64enc")
+
+library("selectr")
+library("rvest")
+library("xml2")
+library("rtweet") 
+library("wordcloud2") 
+library("tm") 
+library("dplyr") 
+library("twitteR")
+library("ROAuth")
+library("jsonlite")
+```
+
+```{r}
+options(httr_oauth_cache=FALSE)
+getOption("httr_oauth_cache")
+Sys.setenv(BEARER_TOKEN = "your-bearer-token")
+consumerKey <- "OA4CTZkyLwMOg08PlFt0goCNC"
+consumerSecret <- "8k59TeAGeqlHXjf4wjOjrKLYXpEvutuRgDjLxVxm5R7uC5wB0q"
+access_Token <- "1177285260242874368-QoMZGUj2TsbkXyPQ5o0pu5iFrFT72q"
+access_Secret <- "6JWjo6Ro4RmqIBFLjOop9QW1FCgHZltRTz8EIsj9UiMOE"
+rtweet_bot(consumerKey,consumerSecret,access_Token,access_Secret )
+auth_setup_default()
+```
+
+```{r}
+S<-search_tweets("New energy",n=1000, include_rts = FALSE)
+S$text <- gsub("[^[:alnum:][:blank:]?&/\\-]", "",S$text) # remove alphanumeric characters 
+S$text <- gsub("https\\S*", "",S$text) 
+tweets.corpus <- Corpus(VectorSource(S$text))
+tweets.corpus <- tweets.corpus %>%
+  tm_map(removeNumbers) %>% # removes numbers from text
+  tm_map(removePunctuation) %>% # removes punctuation from text
+  tm_map(stripWhitespace) %>% # trims the text of whitespace
+  tm_map(content_transformer(tolower)) %>% # convert text to lowercase
+  tm_map(removeWords,stopwords("english")) %>% # remove stopwords
+  tm_map(removeWords,stopwords("SMART")) # remove stopwords not removed from previous line
+t <- TermDocumentMatrix(tweets.corpus) %>% # create a term document matrix
+  as.matrix()
+w <- sort(rowSums(t), decreasing = TRUE) # count all occurrences of each word and group them
+b <- data.frame(Word = names(w), freq = w) # convert it to a dataframe
+head(b) # visualize!
+```
+
+```{r}
+set.seed(1234) # for reproducibility
+wcloud <- wordcloud2(b,   # generate word cloud
+                     size = 1.5,
+                     color= 'random-dark', # set colors
+                     #shape = 'pentagon',
+                     rotateRatio = 0) #horizontal looks better, but what do you think?
+wcloud
+```
