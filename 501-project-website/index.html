@@ -1,90 +1,127 @@
-
-<!DOCTYPE html>
-<html>
-    
-<head>
-    <title>501 project</title>
-
-    <!-- point to css stylesheet -->
-    <link rel="stylesheet" href="styles.css">
- 
-</head>
-
-
-<body>
-
-
-
-<!-- HEADER BAR -->
-<ul>
-    <!-- link back to homepage -->
-    <li><a href="./index.html">About me</a></li>
-    
-    <!-- tab without dropdown  -->
-    <li><a href="./pages/introduction.html">introduction</a></li>
-    
-    <!-- tab with dropdown -->
-    <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Data</a>
-        
-        <div class="dropdown-content">
-            <a href="./example_tweets" target="_blank">twitter_api</a>
-            <a href="./R_API_twitter.html" target="_blank">R api</a>
-
-        </div>
-    </li>
-    
-    <!-- tab with dropdown -->
-    
-    <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Data Gathering</a>
-        
-        <div class="dropdown-content">
-       
-    
-        </div>
-    </li>
-     <!-- tab with dropdown -->
-    <li><a href="https://github.com/anly501/anly-501-project-acousma48" target="_blank">Code</a></li>
-    
-    
-    </ul>
-
-
-<!-- USE A TABLE TO ORGANIZE/FORMAT THE WEBPAGE -->
-<table>
-    <!--TABLE ROW-1-->
-   <tr>
-      <!--ROW-1 COL-1-->
-      <td>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <style type="text/css">
+    body {
+        margin: 0;
+    }
+    a    {
+    font-weight：bold;
+    color:white;
+    text-decoration:none;
+    font-size:150%;
+    padding: 15px;
+    }
+    a:hover {
+      background-color: #ffcc00;
+    }
+    a.home{
+        background: #00254d;
+        font-family: "Times New Roman", Times, serif;
+        float: right;
+    }
+    a.home:hover {
+      background-color: #ffcc00;
+    }
+    a.download{
+        background: #00254d;
+        font-family: "Times New Roman", Times, serif;
+        padding: 10px;
+        float：center;
+    }
+    a.download:hover {
+      background-color: #ffcc00;
+    }
+    .bg{
+        float:left;
+        width:1725px;
+        height:200px;
+        background-image:url(./images/georgetown.jpg);
+        background-position:-5px -325px;
+        margin:0px 0px 30px 0px;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      background-color: #00254d;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      padding: 10px;
+      text-align:center;
+      font-family: "Times New Roman", Times, serif;
+    }
+    li.tabself{
+        background-color: #ffcc00;
+    }
+    li {
+      padding: 15px;
+    }
+    h1 {font-size:40px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+        text-align:center;
+    }
+    h2 {font-size:30px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+        text-align:center;
+    }
+    h3 {font-size:25px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+    }
+    p {font-size:25px;
+       font-family: "Times New Roman", Times, serif;
+       text-align:left;
+    }
+    li.list {
+        font-size:25px;
+       font-family: "Times New Roman", Times, serif;
+    }
+    ol{
+        font-size:20px;
+       font-family: "Times New Roman", Times, serif;
+    }
+    </style>
+    <style type="text/css">
+            @font-face {
+                font-family: "element-icons";
+                src: url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.woff') format('woff'),
+                url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            }
+        </style></head>
+    <body><div class="bg">
+    </div>
+      <ul>
+        <li>
+           <a href="./index.html">About Me</a> 
+        </li>
+        <li>
+           <a href="./pages/introduction.html" target="_self">Introduction</a> 
+        </li>
+        <li>
+           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+        </li>
+        <li>
+           <a href="./pages/data gathering.html" target="_self">Data Gathering</a> 
+        </li>
+        <li>
+           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+        </li>
+        <li>
+           <a href="./pages/data cleaning.html" target="_self">Data Cleaning</a> 
+        </li>
+        <li>
+           <a href="./pages/Exploring Data.html" target="_self">Exploring Data</a> 
+        </li>
+      </ul>
+      
+      <div style="margin-left:27%;padding:16px 16px;height:1000px;"><br>
+        <h1>Hello world! My name is Ting Huang.</h1>
+        <h1>I received my Bachelor of Business degree in Small Business Management from Miami University. My  professional interest is to understand different data in the business environment and draw valuable conclusions from it,  such as predicting the trend of the industry from the annual reports of the leading companies in the industry. Because  I want to engage in business data analysis theory,  I hope to gain skills and methods related to data analysis from DSAN project and understand how to apply them in  business environment. In my opinion, data analysis is a practical and effective skill,  which will be very effective when combined with business theory knowledge. My dream job after graduation is to be an  analyst in the financial field. I love this field and believe that it is an industry that can realize my personal value.  To achieve this, the ability to analyze data is essential. My personal hobby is to experience different things,  especially different types, styles and cultural backgrounds of the hotel.</h1>
+        <h1>Contact me: th941@georgetown.edu</h1>
+        <td>
             <img src="images/photo.jpg" width="320" height="300">
       </td>
-      
-      <!--ROW-1 COL-2-->
-      <td>
-            
-        <h2 style="text-align:left; color:yellow;">About me</h2>
-        
-        <p  style="font-size:10px;"> Hello world!  My name is Ting Huang.I received my Bachelor of Business degree in Small Business Management from Miami University. My  professional interest is to understand different data in the business environment and draw valuable conclusions from it,  such as predicting the trend of the industry from the annual reports of the leading companies in the industry. Because  I want to engage in business data analysis theory,  I hope to gain skills and methods related to data analysis from DSAN project and understand how to apply them in  business environment. In my opinion, data analysis is a practical and effective skill,  which will be very effective when combined with business theory knowledge. My dream job after graduation is to be an  analyst in the financial field. I love this field and believe that it is an industry that can realize my personal value.  To achieve this, the ability to analyze data is essential. My personal hobby is to experience different things,  especially different types, styles and cultural backgrounds of the hotel.</p>
-
-      </td>
-         
-         
-   </tr>
-
-    
-      <td>
-
-         <h2 style="text-align:left; color:yellow;">Contact Me</h2>
-
-  <p>Email: th941@georgetown.edu</p> 
-
-
-      </td>
-   </tr>
-   
-</table>
-
-
-</body>
-</html>
+    </div>
