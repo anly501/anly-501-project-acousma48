@@ -119,22 +119,44 @@
           <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
        </li>
       </ul>
-
-      
       <div style="margin-left:27%;padding:16px 16px;"><br>
-        <h1>Data Cleaning</h1>
-        <p>Data cleaning is an important part of data science. Because often the raw data we collect contains many invalid values, we need to remove these values. For example, as mentioned in the Data Gathering page, using Python to collect tweets containing new energy keywords will contain a lot of invalid and disturbing data. As we can see from the JSON file, it contains a lot of invalid data, such as emoji, "HTTP" and so on. Because our ultimate goal is to find out where the hot spots of new energy are right now, we need to eliminate these interference data. In order to remove these interference data, I took two steps, respectively, is to filter the text type, leaving only the text of English letters, which can effectively eliminate the interference of symbols and emoticons. In the second step, I eliminated some common words, such as alifarhat79.</p>
-        <h>Code Screenshots</h>
+        <h1>Naive Bayes</h1>
+        <p>Naive Bayes (NB) in python with Labeled Record Data </p>
         <td>
-            <img src="../images/Pcleaning1.png" width="300" height="100">
+            <img src="../images/confusion matrix.png" width="320" height="300">
       </td>
       <td>
-        <img src="../images/Pcleaning2.png" width="300" height="100">
+        <img src="../images/new_wordcloud.png" width="320" height="300">
+  </td>
+        <p>The cleaned data was matched by python to the naive bayes model to generate two graphs, the first of confusion metrics and the second of a word cloud excluding irrelevant content.</p>
+        <p>The first image is confusion metrics, which evaluates the accuracy of a classification, has two dimensions, actual condition and predicted condition. It can easily fraction data. We use 'TP',' FN ','FP' and 'TN' to distinguish different data, which is of great help to our naive Bayes classification.</p>
+        <p>The second image is a word cloud excluding irrelevant content.When we set the label, we found that a lot of tweets were not related to the topic we wanted to study, and only included the word "new energy". Therefore, we removed these words to generate a new word cloud, from which it can be found that the most relevant theme of tweets related to new energy was "green". "future", "vihicle" and so on.</p>
+        <p>Code Screenshots</p>
+        <td>
+            <img src="../images/naive_bayes_p.png" width="1000" height="600">
+      </td>
+      <td>
+        <img src="../images/naive_bayes_p1.png" width="1000" height="300">
   </td>
   <td>
-    <img src="../images/Pcleaning3.png" width="300" height="100">
+    <img src="../images/naive_bayes_p2.png" width="1000" height="600">
 </td>
-    
-        <td>
-            <img src="../images/Pcleaning4.png" width="300" height="100">
-</div>
+      <p>Naive Bayes (NB) in R with Labeled Record Data</p>
+      <td>
+        <img src="../images/naive_bayes_R.png" width="320" height="300">
+  </td>
+  <td>
+    <img src="../images/pair.png" width="320" height="300">
+</td>
+      <p>The cleaned data was matched by R to the naive bayes model to generate two graphs.The first figure is confusion metrics, and the second figure is pairplot.</p>
+      <p>The first figure is almost the same as the Python-generated confusion metrics, but slightly different because of the different tools.</p>
+      <p>The second image uses ggpairs functionality to generate a set of statistics for visualization of R language to better see the relationship between variables.</p>
+      <p>Code Screenshots</p>
+      <td>
+        <img src="../images/navie_bayescode_r.png" width="1000" height="600">
+  </td>
+  <td>
+    <img src="../images/naive_bayescode_R2.png" width="1000" height="300">
+</td>
+    </div>
+        
