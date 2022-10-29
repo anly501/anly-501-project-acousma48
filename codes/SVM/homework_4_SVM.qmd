@@ -1,0 +1,271 @@
+---
+jupyter: python3
+---
+
+# Methods
+
+SVM, support vector machines, is a relatively Modern simple Supervised Machine Learning Algorithm used for classification and/or regression.
+
+The following figure is a typical example of SVM.
+
+
+<img src = svm_example.png>
+
+SVM has three parameters, namely gamma, kernel and C.
+
+The advantage of SVM is that it is very versatile, because we can use different types of kernels and different kernel parameters for specific data, and we can use SVM methods for both low-dimensional and high-dimensional data.
+
+SVM also has some disadvantages, such as productivity decreases as the size of the training set increases and does not provide direct probability estimates.
+
+```{python}
+import pandas as pd
+import seaborn as sns 
+import matplotlib.pyplot as plt
+from sklearn import tree
+from IPython.display import Image
+import numpy as np
+from collections import Counter
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import confusion_matrix,accuracy_score,precision_score, recall_score, ConfusionMatrixDisplay
+from sklearn.svm import SVC
+```
+
+# Class Distribution
+
+```{python}
+df = pd.read_csv("twitter_data_clean.csv")
+df.rename({"Whether the relevant": "relevance"}, axis =1, inplace = True)
+
+print("shape of the data", df.shape)
+```
+
+Processing Data
+
+```{python}
+vectorizer = CountVectorizer()
+ 
+vectorizer.fit(df["text"])
+temp = vectorizer.transform(df["text"])
+bag_of_words = pd.DataFrame(temp.toarray(), columns = vectorizer.get_feature_names())
+
+df = pd.concat([bag_of_words,df], axis =1)
+df.drop(columns=["text","created_at"], inplace = True)
+df.head()
+```
+
+Compute distribution of class labels
+
+```{python}
+num_0 = df["relevance"].value_counts()[0]
+num_1 = df["relevance"].value_counts()[1]
+print("Number of points with target=0:", num_0, num_0/(num_0+num_1)*100, "%")
+print("Number of points with target=1:", num_1, num_1/(num_0+num_1)*100, "%")
+```
+
+# Baseline Model for comparison
+
+```{python}
+## RANDOM CLASSIFIER 
+def random_classifier(y_data):
+    ypred=[];
+    max_label=np.max(y_data); #print(max_label)
+    for i in range(0,len(y_data)):
+        ypred.append(int(np.floor((max_label+1)*np.random.uniform(0,1))))
+
+    print("-----RANDOM CLASSIFIER-----")
+    print("count of prediction:",Counter(ypred).values()) # counts the elements' frequency
+    print("probability of prediction:",np.fromiter(Counter(ypred).values(), dtype=float)/len(y_data)) # counts the elements' frequency
+    print("accuracy",accuracy_score(y_data, ypred))
+    print("percision, recall, fscore,",precision_recall_fscore_support(y_data, ypred))
+```
+
+```{python}
+random_classifier(df["relevance"])
+```
+
+# Feature Selection
+
+https://scikit-learn.org/stable/modules/feature_selection.html#feature-selection
+
+```{python}
+X = df.loc[:, df.columns !="relevance"]
+Y = df["relevance"]
+```
+
+```{python}
+from sklearn.feature_selection import VarianceThreshold
+
+sel = VarianceThreshold(threshold=(.05))
+chosen_x = sel.fit_transform(X)
+```
+
+```{python}
+print("we have following features left after removing los variance words:",chosen_x.shape[1])
+concol = sel.get_feature_names_out()
+print(concol)
+X = pd.DataFrame(chosen_x, columns = concol)
+```
+
+Spliting data set
+
+```{python}
+
+x_train = X.sample(frac=0.8, axis=0)
+x_test = X.drop(x_train.index)
+
+y_train = Y.iloc[x_train.index]
+y_test = Y.drop(x_train.index)
+```
+
+# Model Tuning
+
+```{python}
+#Base Line:
+
+SVM = SVC()
+model = SVM.fit(x_train,y_train)
+
+yp_train=model.predict(x_train)
+yp_test=model.predict(x_test)
+
+# print(y_pred.shape)
+print([accuracy_score(y_test, yp_test),recall_score(y_test, yp_test,pos_label=0),recall_score(y_test, yp_test,pos_label=1)])
+print([accuracy_score(y_train, yp_train),recall_score(y_train, yp_train,pos_label=0),recall_score(y_train, yp_train,pos_label=1)])
+```
+
+The above is bad, having 0 recall for label =1 in test. True pos/actual pos.
+
+```{python}
+from sklearn.model_selection import GridSearchCV
+  
+# defining parameter range
+param_grid = {
+              'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
+              'kernel': ['linear', 'poly', 'rbf', 'sigmoid']} 
+  
+grid = GridSearchCV(SVC(), param_grid, refit = True, verbose = 3)
+  
+# fitting the model for grid search
+grid.fit(x_train, y_train)
+```
+
+```{python}
+pa = grid.cv_results_['params']
+```
+
+```{python}
+grid.cv_results_
+```
+
+```{python}
+# print best parameter after tuning
+print(grid.best_params_)
+  
+# print how our model looks after hyper-parameter tuning
+print(grid.best_estimator_)
+```
+
+```{python}
+test_results=[]
+train_results=[]
+
+# kernel = ['linear', 'poly', 'rbf', 'sigmoid']
+gamma = np.linspace(0.0001,1,20)
+
+for i in range(len(gamma)):
+    SVM = SVC(gamma = gamma[i])
+    model = SVM.fit(x_train,y_train)
+
+    yp_train=model.predict(x_train)
+    yp_test=model.predict(x_test)
+
+    # print(y_pred.shape)
+    test_results.append([pa[i],accuracy_score(y_test, yp_test),recall_score(y_test, yp_test,pos_label=0),recall_score(y_test, yp_test,pos_label=1)])
+    train_results.append([pa[i],accuracy_score(y_train, yp_train),recall_score(y_train, yp_train,pos_label=0),recall_score(y_train, yp_train,pos_label=1)])
+```
+
+```{python}
+test_results = np.array(test_results)
+train_results = np.array(train_results)
+```
+
+```{python}
+x_axis = gamma
+fig = plt.figure()
+ax1 = fig.add_subplot(111)
+
+ax1.plot(x_axis,train_results[:,1], c="b", marker='o',label = "train" )
+ax1.plot(x_axis,test_results[:,1], c="r", marker='o',label = "test" )
+plt.xlabel("parameter type used")
+plt.ylabel("Accuracy: Training (blue) and Test (red)")
+plt.legend()
+plt.show()
+
+fig = plt.figure()
+ax1 = fig.add_subplot(111)
+
+ax1.plot(x_axis,train_results[:,2], c="b", marker='o',label = "train" )
+ax1.plot(x_axis,test_results[:,2], c="r", marker='o',label = "test" )
+plt.xlabel("parameter type used")
+plt.ylabel("Recall (Y=0): Training (blue) and Test (red)")
+plt.legend()
+plt.show()
+
+fig = plt.figure()
+ax3 = fig.add_subplot(111)
+
+ax3.plot(x_axis,train_results[:,3], c="b", marker='o',label = "train" )
+ax3.plot(x_axis,test_results[:,3], c="r", marker='o',label = "test" )
+plt.xlabel("parameter type used")
+plt.ylabel("Recall (Y=1): Training (blue) and Test (red)")
+plt.legend()
+plt.show()
+```
+
+Any where after 0.5 would work. 
+
+# Final Results
+
+```{python}
+def confusion_plot(y_data,y_pred):
+  print("ACCURACY:",accuracy_score(y_data, y_pred) )
+  print("NEGATIVE RECALL (Y=0):", recall_score(y_data, y_pred, pos_label= 0))
+  print("NEGATIVE PRECISION (Y=0):", precision_score(y_data, y_pred, pos_label= 0))
+  print("POSITIVE RECALL (Y=1):", recall_score(y_data, y_pred, pos_label= 1))
+  print("POSITIVE PRECISION (Y=1):", precision_score(y_data, y_pred, pos_label= 1))
+  
+  cm = confusion_matrix(y_data, y_pred, labels=model.classes_)
+  disp = ConfusionMatrixDisplay(confusion_matrix=cm,display_labels=model.classes_)
+  print(cm)
+
+  disp.plot()
+  plt.show()
+```
+
+```{python}
+# Using the parameter of 15
+gamma = 0.6
+SVM = SVC(gamma = gamma)
+model = SVM.fit(x_train,y_train)
+
+yp_train=model.predict(x_train)
+yp_test=model.predict(x_test)
+
+print("------TRAINING------")
+confusion_plot(y_train,yp_train)
+print("------TEST------")
+confusion_plot(y_test,yp_test)
+```
+
+slight bit of overfitting
+
+# Conclusion
+
+We can see from the results of the final confusion matrix that there is some overfitting. This depends on the kernel we chose, because we did not set kernel and C when we set parameters, just gamma. We might get better results if we set the kernel to linear or something else.
+
+In addition, the results are not very good, perhaps because our data volume is too small, only hundreds of tweets. If we have a larger amount of data, the effect of SVM may be better.
+
+Nevertheless, we can see that SVM still has a high value for solving such problems, but we need to make some improvements on it in the future, especially in terms of parameters. Finding more suitable parameters for this problem may produce excellent results.
+
+
