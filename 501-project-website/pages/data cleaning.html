@@ -3,40 +3,13 @@
     body {
         margin: 0;
     }
-    a    {
-    font-weight：bold;
-    color:white;
-    text-decoration:none;
-    font-size:150%;
-    padding: 15px;
-    }
-    a:hover {
-      background-color: #ffcc00;
-    }
-    a.home{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        float: right;
-    }
-    a.home:hover {
-      background-color: #ffcc00;
-    }
-    a.download{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        padding: 10px;
-        float：center;
-    }
-    a.download:hover {
-      background-color: #ffcc00;
-    }
     .bg{
-        float:left;
-        width:1725px;
-        height:200px;
-        background-image:url(../images/georgetown.jpg);
-        background-position:-5px -325px;
-        margin:0px 0px 30px 0px;
+      float:left;
+      width:1725px;
+      height:200px;
+      background-image:url(../images/georgetown.jpg);
+      background-position:-5px -325px;
+      margin:0px 0px 30px 0px;
     }
     ul {
       list-style-type: none;
@@ -83,6 +56,27 @@
         font-size:20px;
        font-family: "Times New Roman", Times, serif;
     }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
+    a    {
+    font-weight:700;
+    color:black;
+    font-size: 16px;
+    text-decoration:none;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    a:hover {
+      color: green;
+    }
     </style>
     <style type="text/css">
             @font-face {
@@ -91,59 +85,36 @@
                 url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
             }
         </style></head>
-    <body><div class="bg">
-    </div>
-      <ul>
-        <li>
-           <a href="../index.html">About Me</a> 
-        </li>
-        <li>
-           <a href="./introduction.html" target="_self">Introduction</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-        </li>
-        <li>
-           <a href="./data gathering.html" target="_self">Data Gathering</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-        </li>
-        <li>
-           <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
-        </li>
-        <li>
-           <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
-        </li>
-        <li>
-          <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
-       </li>
-       <li>
+    <body>
+      <div class="nav_bar">
+        <a href="../index.html">About Me</a> 
+        <a href="./introduction.html" target="_self">Introduction</a> 
+        <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+        <a href="./data gathering.html" target="_self">Data Gathering</a> 
+        <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+        <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+        <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+        <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
         <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-     </li>
-     <li>
-      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">SVM</a> 
-   </li>
-   <li>
-    <a href="./clustering.html" target="_self">Clustering</a> 
- </li>
-      </ul>
-
-      
-      <div style="margin-left:27%;padding:16px 16px;"><br>
+        <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+        <a href="./clustering.html" target="_self">Clustering</a> 
+        <a href="./ARM.html" target="_self">ARM and Networking</a> 
+        <a href="./Conclusion.html" target="_self">Conclusion</a> 
+      </div>
+      <div class="bg">
+      </div>
+      <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;"><br>
+        <div style="width:1240px">
         <h1>Data Cleaning</h1>
-        <p>Data cleaning is an important part of data science. Because often the raw data we collect contains many invalid values, we need to remove these values. For example, as mentioned in the Data Gathering page, using Python to collect tweets containing new energy keywords will contain a lot of invalid and disturbing data. As we can see from the JSON file, it contains a lot of invalid data, such as emoji, "HTTP" and so on. Because our ultimate goal is to find out where the hot spots of new energy are right now, we need to eliminate these interference data. In order to remove these interference data, I took two steps, respectively, is to filter the text type, leaving only the text of English letters, which can effectively eliminate the interference of symbols and emoticons. In the second step, I eliminated some common words, such as alifarhat79.</p>
-        <h>Code Screenshots</h>
-        <td>
-            <img src="../images/Pcleaning1.png" width="300" height="100">
-      </td>
-      <td>
-        <img src="../images/Pcleaning2.png" width="300" height="100">
-  </td>
-  <td>
-    <img src="../images/Pcleaning3.png" width="300" height="100">
-</td>
-    
-        <td>
-            <img src="../images/Pcleaning4.png" width="300" height="100">
-</div>
+        <p>After Data gathering, we must need do some data cleaning. Data cleaning is the process of fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. When combining multiple data sources, there are many opportunities for data to be duplicated or mislabeled. If data is incorrect, outcomes and algorithms are unreliable, even though they may look correct. There is no one absolute way to prescribe the exact steps in the data cleaning process because the processes will vary from dataset to dataset. But it is crucial to establish a template for your data cleaning process so you know you are doing it the right way every time. </p>
+        <p>reference: https://www.tableau.com/learn/articles/what-is-data-cleaning#definition</p>
+        <p>From the data in this project, we can see from the json file it contains a lot of invalid data, such as emoji, "HTTP" and so on. Because our ultimate goal is to find out where the hot spots of new energy are right now, we need to eliminate these interference data. In order to remove these interference data, I took two steps, respectively, is to filter the text type, leaving only the text of English letters, which can effectively eliminate the interference of symbols and emoticons. In the second step, I eliminated some common words, such as alifarhat79.</p>
+        <p>Finally, for after working more convenient, I transform the json document to csv.</p>
+        <h1>Code Screenshots</h1>
+        <img src="../images/Pcleaning1.png" width="1200" height="400">
+        <img src="../images/Pcleaning2.png" width="1200" height="400">
+        <img src="../images/Pcleaning3.png" width="1200" height="400">
+        <img src="../images/Pcleaning4.png" width="1200" height="400">
+        </div>
+      </div>
+</body>

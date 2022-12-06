@@ -3,32 +3,26 @@
     body {
         margin: 0;
     }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
     a    {
-    font-weight：bold;
-    color:white;
+    font-weight:700;
+    color:black;
+    font-size: 16px;
     text-decoration:none;
-    font-size:150%;
     padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     }
     a:hover {
-      background-color: #ffcc00;
-    }
-    a.home{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        float: right;
-    }
-    a.home:hover {
-      background-color: #ffcc00;
-    }
-    a.download{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        padding: 10px;
-        float：center;
-    }
-    a.download:hover {
-      background-color: #ffcc00;
+      color: green;
     }
     .bg{
         float:left;
@@ -91,55 +85,37 @@
                 url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
             }
         </style></head>
-    <body><div class="bg">
+    <body><div class="nav_bar">
+      <a href="../index.html">About Me</a> 
+      <a href="./introduction.html" target="_self">Introduction</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+      <a href="./data gathering.html" target="_self">Data Gathering</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+      <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+      <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+      <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
+      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
+      <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+      <a href="./clustering.html" target="_self">Clustering</a>
+      <a href="./ARM.html" target="_self">ARM and Networking</a> 
+      <a href="./Conclusion.html" target="_self">Conclusion</a> 
     </div>
-      <ul>
-        <li>
-           <a href="../index.html">About Me</a> 
-        </li>
-        <li>
-           <a href="./introduction.html" target="_self">Introduction</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-        </li>
-        <li>
-           <a href="./data gathering.html" target="_self">Data Gathering</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-        </li>
-        <li>
-           <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
-        </li>
-        <li>
-           <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
-        </li>
-        <li>
-          <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
-       </li>
-       <li>
-        <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-     </li>
-     <li>
-      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">SVM</a> 
-   </li>
-   <li>
-    <a href="./clustering.html" target="_self">Clustering</a> 
- </li>
-      </ul>
-      <div style="margin-left:27%;padding:16px 16px;"><br>
+    <div class="bg">
+    </div>
+    <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;">
+      <div style="width:1240px;"><br>
         <h1>Naive Bayes</h1>
-        <p>Naive Bayes (NB) in python with Labeled Record Data </p>
+        <p>Naive Bayes is a classification model that assigns labels to examples of a realistic problem, and labels are limited to classify a realistic problem. Using a simple example from life, for example, if a drink is black, gas-filled and the wrapper on the bottle is red, we may think it is cola. The logic of Naive Bayes is that each characteristic in a label independently affects the probability that the drink is cola.</p>
+        <p>Naive Bayes classifiers, just as the name suggests, are simple classification models that can be very effective in many cases.</p>
+        <h1>Naive Bayes (NB) in python with Labeled Record Data </h1>
+        <p>In this project, we used simple labels to classify tweets into those related to new energy or those not, and then used Naive Bayes models to match them.</p>
+        <p>The cleaned data was matched by python to the naive bayes model to generate a graphs,  confusion metrics.</p>
+        <p>The first image is confusion metrics, which evaluates the accuracy of a classification, has two dimensions, actual condition and predicted condition. It can easily fraction data. We use 'TP',' FN ','FP' and 'TN' to distinguish different data, which is of great help to our naive Bayes classification.</p> 
         <td>
-            <img src="../images/confusion matrix.png" width="320" height="300">
+            <img src="../images/confusion matrix.png" width="640" height="600">
       </td>
-      <td>
-        <img src="../images/new_wordcloud.png" width="320" height="300">
-  </td>
-        <p>The cleaned data was matched by python to the naive bayes model to generate two graphs, the first of confusion metrics and the second of a word cloud excluding irrelevant content.</p>
-        <p>The first image is confusion metrics, which evaluates the accuracy of a classification, has two dimensions, actual condition and predicted condition. It can easily fraction data. We use 'TP',' FN ','FP' and 'TN' to distinguish different data, which is of great help to our naive Bayes classification.</p>
-        <p>The second image is a word cloud excluding irrelevant content.When we set the label, we found that a lot of tweets were not related to the topic we wanted to study, and only included the word "new energy". Therefore, we removed these words to generate a new word cloud, from which it can be found that the most relevant theme of tweets related to new energy was "green". "future", "vihicle" and so on.</p>
+      <p>We can see from the figure that the performance of NB model is not bad in our data set, but it is not good enough. There are still a lot of data classified as negative.</p>
+        
         <p>Code Screenshots</p>
         <td>
             <img src="../images/naive_bayes_p.png" width="1000" height="600">
@@ -168,4 +144,6 @@
     <img src="../images/naive_bayescode_R2.png" width="1000" height="300">
 </td>
     </div>
+  </div>
+    </body>
         

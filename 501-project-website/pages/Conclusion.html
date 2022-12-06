@@ -1,0 +1,113 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <style type="text/css">
+    body {
+        margin: 0;
+    }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
+    a    {
+    font-weight:700;
+    color:black;
+    font-size: 16px;
+    text-decoration:none;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    a:hover {
+      color: green;
+    }
+    .bg{
+
+        height:200px;
+        background-image:url(../images/georgetown.jpg);
+        background-position:center;
+        background-size:cover;
+        margin:0px 0px 30px 0px;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      background-color: #00254d;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      padding: 10px;
+      text-align:center;
+      font-family: "Times New Roman", Times, serif;
+    }
+    li.tabself{
+        background-color: #ffcc00;
+    }
+    li {
+      padding: 15px;
+    }
+    h1 {font-size:40px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+        text-align:center;
+    }
+    h2 {font-size:30px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+        text-align:center;
+    }
+    h3 {font-size:25px;
+        font-weight:bold;
+        font-family: "Times New Roman", Times, serif;
+    }
+    p {font-size:25px;
+       font-family: "Times New Roman", Times, serif;
+       text-align:left;
+    }
+    li.list {
+        font-size:25px;
+       font-family: "Times New Roman", Times, serif;
+    }
+    ol{
+        font-size:20px;
+       font-family: "Times New Roman", Times, serif;
+    }
+    </style>
+    <style type="text/css">
+            @font-face {
+                font-family: "element-icons";
+                src: url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.woff') format('woff'),
+                url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            }
+        </style></head>
+    <body>
+    <div class="nav_bar">
+      <a href="../index.html">About Me</a> 
+      <a href="./introduction.html" target="_self">Introduction</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+      <a href="./data gathering.html" target="_self">Data Gathering</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+      <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+      <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+      <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
+      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
+      <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+      <a href="./clustering.html" target="_self">Clustering</a> 
+      <a href="./ARM.html" target="_self">ARM and Networking</a> 
+      <a href="./Conclusion.html" target="_self">Conclusion</a> 
+    </div>
+    <div class="bg">
+    </div>
+    <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;">
+      <div style="width: 1240px;"><br>
+        <h1>Conclusion</h1>
+        <p>Good. Now the project is completely over.</p>
+        <p>Let's go back to the ten questions we asked at the beginning and see if we got any answers through this project. First of all, what are the new energy topics that people are most concerned about and the topics related to new energy on twitter? We can get the answer by cleaning the word cloud after the data. The most important is environmental issues, because the most frequent words are "green", "gas", "future" and so on. In addition, based on the number of favorite and retweets, we can see that the topic that people care about most is economic. It can also answer questions about Tesla. Under the premise of this keyword, the frequency of Tesla's appearance is not high, indicating that it is not the most popular topic. Secondly, tweets containing the keyword "new energy" are not necessarily related to new energy, but also mixed with some useless or wrong tweets about new energy. It also answers the question of whether the new energy tweets are meaningful, most of which are not. After all, Twitter is a social platform, not a scientific one. Then, we can see from all aspects of the data that most netizens do not understand new energy, they just think it is a hot topic and related to high technology and the future, so people do not really pay attention to new energy. New energy-related ads are effective, such as Dojo-related tweets that are all ads, but the number of favorites is usually greater than other tweets. In addition, it can be seen that ordinary users pay more attention to new energy than popular users. Finally, popular tweets about new energy are not necessarily meaningful. According to the final results of our analysis of various models, tweets with strong relevance about new energy have fewer favorite numbers.</p>
+        <p>Therefore, all the questions have been answered and our project is meaningful. For this project, our data did not match well with some models, such as naive bayes. I have summarized the reasons. In my opinion, the most important reason is that our data volume is too small. We only obtained 200 tweets by using python API for analysis, which is not very convincing and has certain defects for classification. I think SVM is the most suitable model for our project. We can clearly see the degree of correlation between different words, so as to judge the hot topics in the whole topic of new energy.<p>
+        <p>If I want to improve this project, first I need to collect more data. A minimum of 10,000 tweets would probably work better. Secondly, data collection should be classified to a certain extent, such as collecting tweets sent by users with more than 10,000 followers and collecting tweets sent by ordinary users. In addition, I only used five models in this project: Naive Bayes, decision tree, SVM, clustering and ARM. If more models are used through further study, I believe there may be unexpected gains.</p>
+        <p>Finally, I gained a lot from the project. First, each step reinforces the knowledge learned about data science and analytics. Secondly, I did research on the new energy topic that I was interested in, not only to complete the project, but also for my own interest. At last, I learned HTML by myself from the project, which will be of great help to my future work.</p>

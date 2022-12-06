@@ -3,39 +3,33 @@
     body {
         margin: 0;
     }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
     a    {
-    font-weight：bold;
-    color:white;
+    font-weight:700;
+    color:black;
+    font-size: 16px;
     text-decoration:none;
-    font-size:150%;
     padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     }
     a:hover {
-      background-color: #ffcc00;
-    }
-    a.home{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        float: right;
-    }
-    a.home:hover {
-      background-color: #ffcc00;
-    }
-    a.download{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        padding: 10px;
-        float：center;
-    }
-    a.download:hover {
-      background-color: #ffcc00;
+      color: green;
     }
     .bg{
-        float:left;
-        width:1725px;
+
         height:200px;
         background-image:url(../images/georgetown.jpg);
-        background-position:-5px -325px;
+        background-position:center;
+        background-size:cover;
         margin:0px 0px 30px 0px;
     }
     ul {
@@ -91,53 +85,40 @@
                 url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
             }
         </style></head>
-    <body><div class="bg">
+    <body>
+    <div class="nav_bar">
+      <a href="../index.html">About Me</a> 
+      <a href="./introduction.html" target="_self">Introduction</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+      <a href="./data gathering.html" target="_self">Data Gathering</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+      <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+      <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+      <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
+      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
+      <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+      <a href="./clustering.html" target="_self">Clustering</a> 
+      <a href="./ARM.html" target="_self">ARM and Networking</a> 
+      <a href="./Conclusion.html" target="_self">Conclusion</a> 
     </div>
-      <ul>
-        <li>
-           <a href="../index.html">About Me</a> 
-        </li>
-        <li>
-           <a href="./introduction.html" target="_self">Introduction</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-        </li>
-        <li>
-           <a href="./data gathering.html" target="_self">Data Gathering</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-        </li>
-        <li>
-           <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
-        </li>
-        <li>
-           <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
-        </li>
-        <li>
-          <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
-       </li>
-       <li>
-        <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-     </li>
-     <li>
-      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">SVM</a> 
-   </li>
-   <li>
-    <a href="./clustering.html" target="_self">Clustering</a> 
- </li>
-      </ul>
-
-      <div style="margin-left:27%;padding:16px 16px;"><br>
+    <div class="bg">
+    </div>
+    <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;">
+      <div style="width: 1240px;"><br>
         <h1>Data Gathering</h1>
-        <p>This page mainly shows how to collect data and this includes an API that uses Python and R to collect keyword tweets from Twitter.</p>
+        <p>Data collection is the first and one of the most important steps in all data science research. Data collection is not as simple as you think. If you want to understand data collection, you must first understand what data is.</p>
+        <p>Not all information can be called data, otherwise information and data would be synonyms. In short, data is information that is meaningful to the study or the activity to be carried out. We get the data we need by formatting the information in the same way.</p>
+        <p>Why is data collection important? Because it is the premise and guarantee of all subsequent work. Invalid data will affect the quality of the subsequent work, and relatively effective data will naturally make the subsequent work more outstanding. We can understand that a writer needs to collect a lot of materials before he writes a good literary work, or a painter needs to collect inspiration before he finishes a good painting. For a data scientist, collecting good quality data is always one of the most critical parts of the job.</p>
+        <p>There are many methods for data collection, mainly divided into two types: first, direct acquisition, including survey, interview and online inquiry; The other is indirect access including quotes, social media monitoring and so on. Since this project needs to obtain tweets on Twitter as our data, we adopt the method of Twitter API.</p>
+        <p>The Twitter API is a developer platform launched by twitter that provides an advanced way to programmatically access public Twitter data. Having code associated with the twitter API in both the R and Python languages allows us to quickly collect public data on twitter.</p>
+        <p>We used Python and R tools to collect 200 and 1000 new energy tweets, respectively, and collected data on each tweet's favorite count and retweet count.</p>
+        <p>Below is a screenshot of the code that collected the data</p>
         <P>Code Screenshots</P>
         <td>
-            <img src="../images/PAPI1.png" width="1000" height="300">
+            <img src="../images/PAPI1.png" width="1000" height="500">
       </td>
       <td>
-        <img src="../images/PAPI2.png" width="1000" height="300">
+        <img src="../images/PAPI2.png" width="1000" height="500">
   </td>
   <td>
     <img src="../images/PAPI3.png" width="1000" height="300">
@@ -146,11 +127,21 @@
         <td>
             <img src="../images/RAPI.png" width="1000" height="300">
       </td>
-        <p>Collected Data screenshot</p>
+      <p>From the code, we can see that the code using R to collect tweets is more concise. Although data cleansing is the next step, a lot of data cleansing has already been done when using R to collect data, such as deleting stop words and so on. In addition, the data collected by python is currently stored in json format, and later I will convert it to csv format for the convenience of subsequent work.</p> 
+
+      <p>Collected Data screenshot</p>
+       
         <td>
             <img src="../images/Pdata.png" width="1000" height="300">
       </td>
       <td>
         <img src="../images/Rdata.png" width="1000" height="300">
   </td>
-    </div>
+  <p>As you can see from the figure above, we did a good job of looking at the word frequency of the words contained in the new energy tweets with the data collected using R, while we could see the number of favorites and retweets for different tweets with the data collected using python.</p>
+  <p>From the data collected above, it can be intuitively seen that most new energy-related tweets are not sent by popular figures, which shows that ordinary people are also very concerned about new energy. Second, it contains some tweets with ads, which also get a certain amount of favorite numbers. In addition, it can be seen from the frequency of words in the tweets that people are most concerned about new energy issues are still related to economic factors. For example, high frequency words such as gas and prices show that people are most concerned about whether new energy can save them money.</p>
+  <p>Finally, we can see that the collected data cannot be directly used for the subsequent work, such as the analysis of SVM, clustering and other models, because it contains too much noise, such as invalid words such as amp and some invalid punctuation marks. This will be addressed in our next step, data cleansing.</p>
+  <p>Here's a link to the data collected:</p>
+  <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+</div>
+  </div>
+  </body>

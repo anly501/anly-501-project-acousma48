@@ -3,33 +3,27 @@
   body {
       margin: 0;
   }
-  a    {
-  font-weight：bold;
-  color:white;
-  text-decoration:none;
-  font-size:150%;
-  padding: 15px;
-  }
-  a:hover {
-    background-color: #ffcc00;
-  }
-  a.home{
-      background: #00254d;
-      font-family: "Times New Roman", Times, serif;
-      float: right;
-  }
-  a.home:hover {
-    background-color: #ffcc00;
-  }
-  a.download{
-      background: #00254d;
-      font-family: "Times New Roman", Times, serif;
-      padding: 10px;
-      float：center;
-  }
-  a.download:hover {
-    background-color: #ffcc00;
-  }
+  .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
+    a    {
+    font-weight:700;
+    color:black;
+    font-size: 16px;
+    text-decoration:none;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    a:hover {
+      color: green;
+    }
   .bg{
       float:left;
       width:1725px;
@@ -91,59 +85,45 @@
               url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
           }
       </style></head>
-  <body><div class="bg">
+  <body><div class="nav_bar">
+    <a href="../index.html">About Me</a> 
+    <a href="./introduction.html" target="_self">Introduction</a> 
+    <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+    <a href="./data gathering.html" target="_self">Data Gathering</a> 
+    <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+    <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+    <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+    <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
+    <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
+    <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+    <a href="./clustering.html" target="_self">Clustering</a> 
+    <a href="./ARM.html" target="_self">ARM and Networking</a> 
+    <a href="./Conclusion.html" target="_self">Conclusion</a> 
   </div>
-    <ul>
-      <li>
-         <a href="../index.html">About Me</a> 
-      </li>
-      <li>
-         <a href="./introduction.html" target="_self">Introduction</a> 
-      </li>
-      <li>
-         <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-      </li>
-      <li>
-         <a href="./data gathering.html" target="_self">Data Gathering</a> 
-      </li>
-      <li>
-         <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-      </li>
-      <li>
-         <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
-      </li>
-      <li>
-         <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
-      </li>
-      <li>
-        <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
-     </li>
-     <li>
-      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-   </li>
-   <li>
-    <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">SVM</a> 
- </li>
- <li>
-  <a href="./clustering.html" target="_self">Clustering</a> 
-</li>
-    </ul>
-    <div style="margin-left:27%;padding:16px 16px;"><br>
+  <div class="bg">
+  </div>
+  <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;">
+    <div style="padding:16px 16px;width: 1240px;"><br>
+      <h1>Data Visualization</h1>
+      <p>Data visualization shows data in pictures. Data is just a tool, we use data to show the point we want to show, we can understand it as evidence to prove the argument. However, the large and dense data is not good for the audience to quickly understand and leave a deep impression. "A picture is worth a thousand words". People tend to remember and remember pictures much more than words and numbers, so data visualization is a good way to achieve this. Data visualization can take many forms, such as scatter plots, which can be used for statistical distribution, and histograms, which can be used for descriptive purposes. The end result of data visualization is data exploring.</p>
+      
       <h1>Exploring Data</h1>
-      <p>This is done by way of WordCloud to show the word frequency of the collected Twitter text. You can clearly see some of the most frequent words in the relevant documents. It can be seen which concepts related to new energy are currently gaining the most heat.</p>
+      <p>In this project, firstly, I use the wordcloud to show the word frequency of the collected Tweets. We can very easily see some of the most frequent words in the picture below.</p>
+      <p>The image on the left is obtained by R and the image on the right is obtained by Python. From the two word cloud, we can see except the "new" and "energy", the most frequency word are "future", "price", "gas" and so on. Because of the showing of word cloud here using the uncleaning data, so there are some useless words like "http", "amp". Howerver on the next working, we will delete this useless words.</p>
+      <p>Here I only show the word clouds as the exploring data, but on the following work like the naive bayes, decision tree, SVM, I will show more exploring Data.</p>
       <td>
           <img src="../images/pythonwordcloud.png" width="320" height="300">
     </td>
     <td>
-      <img src="../images/Rwordcloud.png" width="320" height="300">
+      <img src="../images/Rwordcloud.png" width="480" height="500">
 </td>
-      <p>The figure on the right is the word cloud obtained by Python, while the figure on the left is the word cloud obtained by R.</p>
-      <h>Code Screenshots</h>
+      <h1>Code Screenshots</h1>
       <td>
-          <img src="../images/Pcode_wordcloud.png" width="1000" height="300">
+          <img src="../images/Pcode_wordcloud.png" width="1200" height="400">
     </td>
     <td>
-      <img src="../images/Rcode_wordcloud.png" width="1000" height="300">
+      <img src="../images/Rcode_wordcloud.png" width="1200" height="400">
 </td>
   </div>
-    
+</div>
+</body>

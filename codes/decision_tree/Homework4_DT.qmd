@@ -34,7 +34,7 @@ from sklearn.metrics import confusion_matrix,accuracy_score,precision_score, rec
 # Class Distribution
 
 ```{python}
-df = pd.read_csv("twitter_data_clean.csv")
+df = pd.read_csv("../../data/cleaning data/twitter_data_clean.csv")
 df.rename({"Whether the relevant": "relevance"}, axis =1, inplace = True)
 ```
 

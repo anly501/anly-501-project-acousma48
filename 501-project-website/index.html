@@ -3,86 +3,42 @@
     body {
         margin: 0;
     }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
     a    {
-    font-weight：bold;
-    color:white;
+    font-weight:700;
+    color:black;
+    font-size: 16px;
     text-decoration:none;
-    font-size:150%;
     padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     }
     a:hover {
-      background-color: #ffcc00;
+      color: green;
     }
-    a.home{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        float: right;
+    .main_part{
+      display:flex; 
+      flex-direction: column;
+      align-items: center;
     }
-    a.home:hover {
-      background-color: #ffcc00;
+    .self_intro{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      width: 800px;
+      border-bottom: #e7e7e7 1px solid;
     }
-    a.download{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        padding: 10px;
-        float：center;
-    }
-    a.download:hover {
-      background-color: #ffcc00;
-    }
-    .bg{
-        float:left;
-        width:1725px;
-        height:200px;
-        background-image:url(./images/georgetown.jpg);
-        background-position:-5px -325px;
-        margin:0px 0px 30px 0px;
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 25%;
-      background-color: #00254d;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-      padding: 10px;
-      text-align:center;
-      font-family: "Times New Roman", Times, serif;
-    }
-    li.tabself{
-        background-color: #ffcc00;
-    }
-    li {
-      padding: 15px;
-    }
-    h1 {font-size:40px;
-        font-weight:bold;
-        font-family: "Times New Roman", Times, serif;
-        text-align:center;
-    }
-    h2 {font-size:30px;
-        font-weight:bold;
-        font-family: "Times New Roman", Times, serif;
-        text-align:center;
-    }
-    h3 {font-size:25px;
-        font-weight:bold;
-        font-family: "Times New Roman", Times, serif;
-    }
-    p {font-size:25px;
-       font-family: "Times New Roman", Times, serif;
-       text-align:left;
-    }
-    li.list {
-        font-size:25px;
-       font-family: "Times New Roman", Times, serif;
-    }
-    ol{
-        font-size:20px;
-       font-family: "Times New Roman", Times, serif;
-    }
+    p{
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;}
     </style>
     <style type="text/css">
             @font-face {
@@ -91,50 +47,42 @@
                 url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
             }
         </style></head>
-    <body><div class="bg">
-    </div>
-      <ul>
-        <li>
-           <a href="./index.html">About Me</a> 
-        </li>
-        <li>
-           <a href="./pages/introduction.html" target="_self">Introduction</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-        </li>
-        <li>
-           <a href="./pages/data gathering.html" target="_self">Data Gathering</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-        </li>
-        <li>
-           <a href="./pages/data cleaning.html" target="_self">Data Cleaning</a> 
-        </li>
-        <li>
-           <a href="./pages/Exploring Data.html" target="_self">Exploring Data</a> 
-        </li>
-        <li>
-          <a href="./pages/Naive Bayes.html" target="_self">Navie Bayes</a> 
-       </li>
-       <li>
-        <a href="../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-     </li>
-     <li>
+    <body>
+    <div class="nav_bar">
+      <a href="./index.html">About Me</a> 
+      <a href="./pages/introduction.html" target="_self">Introduction</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+      <a href="./pages/data gathering.html" target="_self">Data Gathering</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+      <a href="./pages/data cleaning.html" target="_self">Data Cleaning</a> 
+      <a href="./pages/Exploring Data.html" target="_self">Exploring Data</a> 
+      <a href="./pages/Naive Bayes.html" target="_self">Naive Bayes</a> 
+      <a href="../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
       <a href="../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
-   </li>
-   <li>
-    <a href="./pages/clustering.html" target="_self">Clustering</a> 
- </li>
-
-      </ul>
-      
-      <div style="margin-left:27%;padding:16px 16px;height:1000px;"><br>
-        <h1>Hello world! My name is Ting Huang.</h1>
-        <h1>I received my Bachelor of Business degree in Small Business Management from Miami University. My  professional interest is to understand different data in the business environment and draw valuable conclusions from it,  such as predicting the trend of the industry from the annual reports of the leading companies in the industry. Because  I want to engage in business data analysis theory,  I hope to gain skills and methods related to data analysis from DSAN project and understand how to apply them in  business environment. In my opinion, data analysis is a practical and effective skill,  which will be very effective when combined with business theory knowledge. My dream job after graduation is to be an  analyst in the financial field. I love this field and believe that it is an industry that can realize my personal value.  To achieve this, the ability to analyze data is essential. My personal hobby is to experience different things,  especially different types, styles and cultural backgrounds of the hotel.</h1>
-        <h1>Contact me: th941@georgetown.edu</h1>
-        <td>
-            <img src="images/photo.jpg" width="320" height="300">
-      </td>
+      <a href="./pages/clustering.html" target="_self">Clustering</a> 
+      <a href="./pages/ARM.html" target="_self">ARM and Networking</a> 
+      <a href="./pages/Conclusion.html" target="_self">Conclusion</a> 
     </div>
+    <!-- blanks-->
+    <div style="height:60px ;">
+    </div>
+    <!-- introduction -->
+   <div class="main_part">
+      <div class="self_intro">
+        <div>
+            <img src="images/photo.jpg" style="width:220;height:200;margin:40px;">
+        </div>
+        <div style="padding:0px;;"><br>
+          <p style="font-size:50px;margin: 0px;margin-top: 20px;">Ting Huang</p>
+        </div>
+      </div>
+      <div style="width:700px ;">
+        <p style="font-weight: bold;">Contact me: th941@georgetown.edu</p>
+        <p>Hello world! My name is Ting Huang.</p>
+        <p>I received my Bachelor of Business degree in Small Business Management from Miami University. My  professional interest is to understand different data in the business environment and draw valuable conclusions from it,  such as predicting the trend of the industry from the annual reports of the leading companies in the industry. Because  I want to engage in business data analysis theory,  I hope to gain skills and methods related to data analysis from DSAN project and understand how to apply them in  business environment. In my opinion, data analysis is a practical and effective skill,  which will be very effective when combined with business theory knowledge. My dream job after graduation is to be an  analyst in the financial field. I love this field and believe that it is an industry that can realize my personal value.  To achieve this, the ability to analyze data is essential. My personal hobby is to experience different things,  especially different types, styles and cultural backgrounds of the hotel.</p>
+       </div>
+    </div>
+
+    <br>
+
+  </body>

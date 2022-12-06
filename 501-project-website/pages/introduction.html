@@ -3,32 +3,26 @@
     body {
         margin: 0;
     }
+    .nav_bar{
+      display:flex; 
+      flex-direction: row;
+      justify-content:flex-start;
+      background-color: white;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      border-bottom: #e7e7e7 3px solid;
+    }
     a    {
-    font-weight：bold;
-    color:white;
+    font-weight:700;
+    color:black;
+    font-size: 16px;
     text-decoration:none;
-    font-size:150%;
     padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     }
     a:hover {
-      background-color: #ffcc00;
-    }
-    a.home{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        float: right;
-    }
-    a.home:hover {
-      background-color: #ffcc00;
-    }
-    a.download{
-        background: #00254d;
-        font-family: "Times New Roman", Times, serif;
-        padding: 10px;
-        float：center;
-    }
-    a.download:hover {
-      background-color: #ffcc00;
+      color: green;
     }
     .bg{
         float:left;
@@ -91,57 +85,43 @@
                 url('chrome-extension://eibnkkenjjeaadmjkngfincfnapgpeao/fonts/element-icons.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
             }
         </style></head>
-    <body><div class="bg">
+    <body>
+      <div class="nav_bar">
+      <a href="../index.html">About Me</a> 
+      <a href="./introduction.html" target="_self">Introduction</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
+      <a href="./data gathering.html" target="_self">Data Gathering</a> 
+      <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
+      <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
+      <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
+      <a href="./Naive Bayes.html" target="_self">Naive Bayes</a> 
+      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
+      <a href="../../codes/SVM/homework_4_SVM.html" target="_self">SVM</a> 
+      <a href="./clustering.html" target="_self">Clustering</a> 
+      <a href="./ARM.html" target="_self">ARM and Networking</a> 
+      <a href="./Conclusion.html" target="_self">Conclusion</a> 
     </div>
-      <ul>
-        <li>
-           <a href="../index.html">About Me</a> 
-        </li>
-        <li>
-           <a href="./introduction.html" target="_self">Introduction</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/data" target="_self">Data</a> 
-        </li>
-        <li>
-           <a href="./data gathering.html" target="_self">Data Gathering</a> 
-        </li>
-        <li>
-           <a href="https://github.com/anly501/anly-501-project-acousma48/tree/main/codes/01-data-gathering" target="_self">Code</a> 
-        </li>
-        <li>
-           <a href="./data cleaning.html" target="_self">Data Cleaning</a> 
-        </li>
-        <li>
-           <a href="./Exploring Data.html" target="_self">Exploring Data</a> 
-        </li>
-        <li>
-          <a href="./Naive Bayes.html" target="_self">Navie Bayes</a> 
-       </li>
-       <li>
-        <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">Decision Tree</a> 
-     </li>
-     <li>
-      <a href="../../codes/decision_tree/Homework4_DT_notebook.html" target="_self">SVM</a> 
-   </li>
-   <li>
-    <a href="./clustering.html" target="_self">Clustering</a> 
- </li>
-      </ul>
-
-      <div style="margin-left:27%;padding:16px 16px;height:1000px;"><br>
-        <h1>My topic is nwe energy.</h1>
-        <h1>In recent years, with the strengthening of environmental awareness and the continuous development of science and technology around the world. The concept of new energy is thriving. In addition, people gradually realize that the traditional fossil energy is eventually non-renewable and will be exhausted, which will be followed by an energy crisis, so the development of new energy can be said to be inevitable. Energy is often one of the keys to the development of the world economy, and energy is also the premise of human survival and development. Therefore, I want to explore the current hot spots of new energy and people's concerns through the study of data related to new energy. Therefore, I put forward ten questions about new energy and try to use data science to answer them.</h1>
-        <h1>What concepts of new energy are people most concerned about at present?</h1>
-        <h1>People feel what a difference new energy makes in their lives.</h1>
-        <h1>Is the heat of new energy rising with the passage of time?</h1>
-        <h1>Has the focus of new energy changed over time?</h1>
-        <h1>New energy vehicle as the most popular new energy concept, what brand do people like most?</h1>
-        <h1>What concepts of new energy are increasing in popularity?</h1>
-        <h1>Which new energy-related companies are attracting the most attention?</h1>
-        <h1>Do people support the development of new energy?</h1>
-        <h1>Which country people are most concerned about new energy?</h1>
-        <h1>Photovoltaic power generation is one of the hot spots of new energy </h1>
-        <a href="../index.html" target="_self" class="home">Home</a>
+    <div class="bg">
+    </div>
+    <div style="display:flex;flex-direction: column;align-items:center;padding:16px 16px;">
+      <div style="width: 1240px;"><br>
+        <h1>501 Final Anly-501-Project</h1>
+        <p>My topic is new energy.</p>
+        <p>With the development of modern civilization, people's awareness of environmental protection has gradually increased, and with the progress of science and technology, new energy as the main force of environmental protection has gradually entered people's vision. In recent years, concepts related to new energy frequently appear, such as new energy vehicles, new energy batteries, new energy lamps and so on.</p>
+        <p>As a hot topic, new energy has been analyzed and studied from different fields. For example, scientists study new materials, economists study economic utility, and ordinary people study electricity saving. As a student majoring in data science, I hope to study the hot topic of new energy by means of data science, which I think is very meaningful.</p>
+        <p>This project studies the popularity of new energy by obtaining a certain number of tweets from twitter, and conducts data analysis around the following ten questions.</p>
+        <p>What are the new energy-related topics that people are most concerned about?</p>
+        <p>What are the trending topics related to new energy on Twitter?</p>
+        <p>Are tweets that include the keyword "new energy" really related to new energy?</p>
+        <p>Is Tesla really the hottest new energy topic as rumored?</p>
+        <p>Are people really paying attention to new energy? Or are you just riding the heat?</p>
+        <p>Do tweets about new energy really mean anything?</p>
+        <p>Are new energy-related ads effective?</p>
+        <p>Is Twitter a meaningful community to talk about new energy?</p>
+        <p>Are popular users or ordinary users concerned about new energy?</p>
+        <p>Are well-liked tweets about new energy necessarily meaningful?</p>
+        <img src="../images/intro.jpg" style="width:1200;height:700;margin:40px;">
       </td>
     </div>
+  </div>
+</body>
